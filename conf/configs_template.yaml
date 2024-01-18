@@ -1,0 +1,44 @@
+db:
+  host: ...
+  database: ...
+  user: ...
+  password: ...
+  port: ...
+
+sql:
+  tables_creation_queries_path: sql/create_tables
+  statistics_aggregation_queries_path: soccer_api/sql/aggregations
+
+rapid_api:
+  key: ...
+  host: ...
+
+urls:
+  leagues: "https://api-football-v1.p.rapidapi.com/v3/leagues"
+  teams: "https://api-football-v1.p.rapidapi.com/v3/teams"
+  teams_statistics: "https://api-football-v1.p.rapidapi.com/v3/teams/statistics"
+  standings: "https://api-football-v1.p.rapidapi.com/v3/standings"
+  top_scorers: "https://api-football-v1.p.rapidapi.com/v3/players/topscorers"
+
+data_extraction:
+  first_run: False
+  seasons: [2018, 2019, 2020, 2021, 2022, 2023]
+  leagues: [61, 39, 78, 135, 140]
+
+airflow:
+  dag_args:
+    owner: ...
+    email: ...
+    email_on_failure: True
+    email_on_retry: False
+    retries: 0
+    depends_on_past: False
+
+
+dash:
+  redundant_columns: [date_extraction, time_extraction]
+  markdown_text: This page represents multiple statistics of top-5 most popular footbal leagues such as team standings, top-scorers statistics, cards, goals, etc.
+  colors:
+    agressive: '#102937'
+    soft: '#61A0C6'
+    head_background: '#7FB3D5'

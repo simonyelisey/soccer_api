@@ -1,0 +1,6 @@
+.DS_Store
+.idea/
+/data
+/notebooks
+/venv_soccer
+airflow_notes.txt
